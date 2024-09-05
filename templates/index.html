@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}HomePage{% endblock title %} 
+{% block content %}
+<main class="main-content border-radius-lg">
+  <div class="container-fluid py-4">
+    <div style="margin-left: 30%">
+      <h1>Bienvenue dans " Ma Cantine! "</h1>
+      <p>
+        Découvrez notre menu complet avec des plats de gastronomie française et
+        une cuisine vegan et sans gluten.
+      </p>
+      
+      <div style="display:flex; justify-content:space-around; margin-bottom:10vh">
+        <div style="padding:20px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  text-color:white; width:fit-content; border-radius:15px"> 
+            <p> Nombre de menu</p>
+            <p>{{total_menu}}</p>
+        </div>
+        <div style="padding:20px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; text-color:white; width:fit-content; border-radius:15px"> 
+            <p> Nombre de plats</p>
+            <p>{{total_dishes}}</p>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-around; margin-bottom:10vh">
+      <a href="{% url "menu:index" %}" class="btn btn-primary">Voir les menu</a>
+      <a href="{% url "dishes:index" %}" class="btn btn-primary">Voir les plats </a>
+    </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
